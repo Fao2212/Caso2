@@ -1,9 +1,10 @@
+using Caso2.Controlador;
+using Caso2.view;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using view;
 
 namespace Caso2
 {
@@ -18,7 +19,8 @@ namespace Caso2
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Controller c = new Controller();
+            Application.Run(new Form2(c));
         }
     }
 }
