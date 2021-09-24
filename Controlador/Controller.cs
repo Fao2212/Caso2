@@ -1,4 +1,5 @@
-﻿using Caso2.Model;
+﻿using Caso2.model;
+using Caso2.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,17 +11,12 @@ namespace Caso2.Controlador
      class Controller
     {
         public List<Ball> Balls { get; set; }
+        IStrategy strategy;
 
         public Controller()
         {
-            // balls = strategy.createBalls();
-            Balls = new List<Ball>();
-            for(int i = 0; i < 20; i++)
-            {
-                Ball ball = new Ball();
-                Balls.Add(ball);
-            }
-            
+            strategy = new BallFactory();
+            Balls = strategy.generate(20);   
         }
 
 

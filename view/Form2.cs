@@ -47,7 +47,7 @@ namespace Caso2.view
             this.yBallRange = new Vector2(location.Y, location.Y + size.Height);    
             this.DoubleBuffered = true;
             Timer timer = new Timer();
-            timer.Interval = 5;
+            timer.Interval = 10;
             timer.Enabled = true;
             timer.Tick += Timer_Tick;
             this.Paint += Form2_Paint;

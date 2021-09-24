@@ -16,12 +16,12 @@ namespace Caso2.Model
 
         public Size Size {  get; set; }
 
-        public Ball()
+        public Ball(int grades,Brush color)
         {
-            this.Speed = 3;
-            this.Direction = new Vector2(1, 1);
+            this.Speed = 2;
+            this.Direction = new Vector2((float)Math.Cos(grades), (float)Math.Sin(grades));
             this.Size = new Size(10, 10);
-            this.Color = Brushes.Red;
+            this.Color = color;
         }
 
     }
