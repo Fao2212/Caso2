@@ -20,7 +20,7 @@ namespace Caso2.Model
             return result;
         }
 
-        public static Ball get(BallType type)
+        public Ball get(BallType type)
         {
             switch(type) {
                 case BallType.CommonBall: return new Ball(90,Brushes.Red);
