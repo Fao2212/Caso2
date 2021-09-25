@@ -39,12 +39,13 @@ namespace Caso2.view
             }
         }
 
-        internal void loadBalls(List<Ball> balls)
+        internal void loadBalls(List<Ball> balls,long timeElapsed)
         {
             foreach (Ball ball in balls)
             {
                 graphicBalls.Add(new GraphicBall(ball, xBallRange, yBallRange, randomPosition(), this.offset));
             }
+            timeLabel.Text = "Time: "+timeElapsed.ToString()+"ms";
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -78,6 +79,9 @@ namespace Caso2.view
             controlador.moreBalls();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

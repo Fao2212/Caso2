@@ -33,6 +33,7 @@ namespace Caso2.view
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.timeLabel = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,11 +48,12 @@ namespace Caso2.view
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.timeLabel);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.checkedListBox1);
             this.panel2.Location = new System.Drawing.Point(593, 21);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(195, 402);
+            this.panel2.Size = new System.Drawing.Size(195, 424);
             this.panel2.TabIndex = 1;
             // 
             // button1
@@ -77,7 +79,15 @@ namespace Caso2.view
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(195, 290);
             this.checkedListBox1.TabIndex = 0;
-            
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.Location = new System.Drawing.Point(18, 400);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(0, 20);
+            this.timeLabel.TabIndex = 2;
+            this.timeLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form2
             // 
@@ -91,6 +101,7 @@ namespace Caso2.view
             this.Load += new System.EventHandler(this.Form2_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form2_Paint);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -101,5 +112,6 @@ namespace Caso2.view
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Label timeLabel;
     }
 }

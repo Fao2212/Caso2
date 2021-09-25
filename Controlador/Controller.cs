@@ -3,6 +3,7 @@ using Caso2.Model;
 using Caso2.view;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,10 @@ namespace Caso2.Controlador
 
         public void moreBalls()
         {
-            form2.loadBalls(this.strategy.generate(numberOfBalls));
+            long start = Stopwatch.GetTimestamp();
+            List<Ball> balls = this.strategy.generate(numberOfBalls);
+            long end = Stopwatch.GetTimestamp();
+            form2.loadBalls(balls, end - start);
         }
 
         public enum StrategyType
