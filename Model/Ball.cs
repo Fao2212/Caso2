@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Caso2.model;
+using System;
 using System.Drawing;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Caso2.Model
 {
-    class Ball
+    class Ball:IPrototype<Ball>
     {
         public float Speed { get; set; }
         public Vector2 Direction {  get; set; }
@@ -24,5 +21,22 @@ namespace Caso2.Model
             this.Color = color;
         }
 
+        public Ball(float speed, Vector2 direcction, Size size, Brush color)
+        {
+            this.Speed = speed;
+            this.Direction = new Vector2(direcction.X,direcction.Y);
+            this.Size = new Size(size.Width,size.Height);
+            this.Color = color;
+        }
+
+        public Ball Clone()
+        {
+            return new Ball(this.Speed, this.Direction, this.Size, this.Color);
+        }
+
+        public Ball DeepClone()
+        {
+            return Clone();
+        }
     }
 }

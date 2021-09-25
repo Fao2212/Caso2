@@ -20,7 +20,9 @@ namespace Caso2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Controller c = new Controller();
-            Application.Run(new Form2(c));
+            Form2 view = new Form2(c);
+            c.addView(view);
+            Application.Run(view);
         }
     }
 }

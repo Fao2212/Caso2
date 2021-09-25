@@ -39,6 +39,14 @@ namespace Caso2.view
             }
         }
 
+        internal void loadBalls(List<Ball> balls)
+        {
+            foreach (Ball ball in balls)
+            {
+                graphicBalls.Add(new GraphicBall(ball, xBallRange, yBallRange, randomPosition(), this.offset));
+            }
+        }
+
         private void Form2_Load(object sender, EventArgs e)
         {
             Size size = panelBolas.Size;
@@ -51,10 +59,6 @@ namespace Caso2.view
             timer.Enabled = true;
             timer.Tick += Timer_Tick;
             this.Paint += Form2_Paint;
-            foreach (Ball ball in controlador.Balls)
-            {
-                graphicBalls.Add(new GraphicBall(ball,xBallRange,yBallRange,randomPosition(),this.offset));
-            }
 
         }
 
@@ -67,6 +71,11 @@ namespace Caso2.view
         {
 
             return new Vector2(new Random().Next((int)xBallRange.X+offset, (int)xBallRange.Y)-offset, new Random().Next((int)yBallRange.X+offset, (int)yBallRange.Y)-offset);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            controlador.moreBalls(Controller.StrategyType.Prototype);
         }
     }
 }

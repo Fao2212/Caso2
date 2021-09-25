@@ -1,5 +1,4 @@
-﻿using Caso2.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Caso2.model
 {
-    interface IStrategy
+    interface IPrototype<T>
     {
-         List<Ball>generate(int numberOfBalls);
+        T Clone();
+        T DeepClone();
     }
 }

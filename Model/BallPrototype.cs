@@ -1,22 +1,25 @@
 ﻿using Caso2.model;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Caso2.Model
 {
-    public class BallPrototype//: IStrategy
+    public class BallPrototype: IStrategy
     {
-       /* public  Ball Clonar()
-        {
-            return (Ball)this.MemberwiseClone();
-        }
+        Ball ballPrototype;
 
-        public List<Ball> generate(int numberOfBalls)
+        public BallPrototype()
         {
-            throw new NotImplementedException();
-        }*/
+            this.ballPrototype = new Ball(180, Brushes.Yellow);
+        }
+        List<Ball> IStrategy.generate(int numberOfBalls)
+        {
+            List<Ball> result = new List<Ball>();
+            for(int i = 0;i< numberOfBalls; i++)
+            {
+                result.Add(ballPrototype.Clone());
+            }
+            return result;
+        }
     }
 }

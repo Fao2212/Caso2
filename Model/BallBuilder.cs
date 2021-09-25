@@ -15,7 +15,7 @@ namespace Caso2.Model
         {
             for (int i = 0; i < numberOfBalls; i++)
             {
-                listBalls.Add(new Ball(90, Brushes.Gray));
+                //listBalls.Add(new Ball(90, Brushes.Gray));
             }
             return listBalls;
         }
