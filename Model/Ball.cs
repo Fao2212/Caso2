@@ -24,5 +24,10 @@ namespace Caso2.Model
             this.Color = color;
         }
 
+        public Ball clone()
+        {
+            return (Ball)this.MemberwiseClone();
+        }
+
     }
 }
