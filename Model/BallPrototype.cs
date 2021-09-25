@@ -8,19 +8,21 @@ using System.Threading.Tasks;
 
 namespace Caso2.Model
 {
-    public class BallPrototype: IStrategy/*, IPrototype<Ball>*/
+    public class BallPrototype /*: IStrategy/*, IPrototype<Ball>*/
     {
+
         
-        public List<Ball> generate(int numberOfBalls)
+        /*public List<Ball> generate(int numberOfBalls)
         {
             List<Ball> listBalls = new List<Ball>();
             Ball newBall = new Ball(45, Brushes.Blue);
-            for(int i = 0; i < numberOfBalls; i++)
+
+            *//*for(int i = 0; i < numberOfBalls; i++)
             {
                 listBalls.Add(newBall.clone());
-            }
+            }*//*
             
             return listBalls;
-        }
+        }*/
     }
 }

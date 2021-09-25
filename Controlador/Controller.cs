@@ -17,6 +17,7 @@ namespace Caso2.Controlador
         {
             //strategy = new BallFactory();
             //strategy = new BallPool();
+            //strategy = new BallBuilder();
             strategy = new BallBuilder();
             
             Balls = strategy.generate(20);
