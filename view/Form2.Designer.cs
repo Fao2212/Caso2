@@ -77,6 +77,7 @@ namespace Caso2.view
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(195, 290);
             this.checkedListBox1.TabIndex = 0;
+            
             // 
             // Form2
             // 

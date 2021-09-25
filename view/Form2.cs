@@ -75,7 +75,9 @@ namespace Caso2.view
 
         private void button1_Click(object sender, EventArgs e)
         {
-            controlador.moreBalls(Controller.StrategyType.Prototype);
+            controlador.moreBalls();
         }
+
+
     }
 }

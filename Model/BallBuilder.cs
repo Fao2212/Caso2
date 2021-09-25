@@ -3,34 +3,31 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Caso2.Model
 {
-    class BallBuilder : IStrategy, IBuilder<List<Ball>>
+    class BallBuilder : IStrategy/*, IBuilder<List<Ball>>*/
     {
-        List<Ball> listBalls;
+
+        int defaultSize = 10;
+
         public List<Ball> generate(int numberOfBalls)
         {
+            List<Ball> result = new List<Ball>();
             for (int i = 0; i < numberOfBalls; i++)
             {
-                //listBalls.Add(new Ball(90, Brushes.Gray));
+                result.Add(buildBall());   
             }
-            return listBalls;
+            return result;
         }
 
-        
-        public List<Ball> build()
-        {
-            List<Ball> newList = listBalls;
-            this.reset();
-            return newList;
-        }
 
-        public void reset()
+        public Ball buildBall()
         {
-            this.listBalls = new List<Ball>();
+            return new Ball.BallBuilder().setSize(new Size(defaultSize,defaultSize)).setDirection(new Vector2(1,0)).setSpeed(5).setColor(Brushes.Green).build();
         }
     }
 }

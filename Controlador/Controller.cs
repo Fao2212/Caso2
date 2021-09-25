@@ -12,17 +12,14 @@ namespace Caso2.Controlador
      class Controller
     {
         public List<Ball> Balls { get; set; }
-        Dictionary<StrategyType,IStrategy> strategies;
+        IStrategy strategy;
         Form2 form2;
         int numberOfBalls = 20;
 
         public Controller()
         {
-            this.strategies = new Dictionary<StrategyType, IStrategy>();
-            this.strategies[StrategyType.Builder] = new BallBuilder();
-            this.strategies[StrategyType.Factory] = new BallFactory();
-            this.strategies[StrategyType.Pool] = new BallPool();
-            this.strategies[StrategyType.Prototype] = new BallPrototype();
+            this.strategy = new BallBuilder();
+
         }
 
         public void addView(Form2 form2)
@@ -30,9 +27,9 @@ namespace Caso2.Controlador
             this.form2 = form2;
         }
 
-        public void moreBalls(StrategyType strategy)
+        public void moreBalls()
         {
-            form2.loadBalls(this.strategies[strategy].generate(numberOfBalls));
+            form2.loadBalls(this.strategy.generate(numberOfBalls));
         }
 
         public enum StrategyType
